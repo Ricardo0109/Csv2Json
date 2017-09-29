@@ -1,0 +1,52 @@
+1 => d_codigo			code *
+2 => d_asenta			text
+3 => d_tipo_asenta		text
+4 => D_mnpio			text
+5 => d_estado			text
+6 => d_ciudad			text last
+
+7 => d_CP				code 	ignore
+8 => c_estado			code
+9 => c_oficina			code ignore
+
+10 => c_CP			null
+
+11 => c_tipo_asenta		code
+12 => c_mnpio		code *
+13 => id_asenta_cpcons	code *
+14 => d_zona			text
+15 => c_cve_ciudad		code last
+#===========================================================
+1 => d_codigo			code
+
+8 => c_estado			code
+15 => c_cve_ciudad		code last
+12 => c_mnpio			code
+11 => c_tipo_asenta		code
+13 => id_asenta_cpcons	code
+
+10 => c_CP			null
+
+14 => d_zona			text
+5 => d_estado			text
+6 => d_ciudad			text last
+4 => D_mnpio			text
+3 => d_tipo_asenta		text
+2 => d_asenta			text
+
+7 => d_CP				code 	ignore
+9 => c_oficina			code ignore
+
+d_codigo|c_estado|c_cve_ciudad|c_mnpio|c_tipo_asenta|id_asenta_cpcons|c_CP|d_zona|d_estado|d_ciudad|D_mnpio|d_tipo_asenta|d_asenta
+
+^(\d*)\|([\s\S]*?)\|([\s\S]*?)\|([\s\S]*?)\|([\s\S]*?)\|([\s\S]*?)\|(\d*?)\|(\d*?)\|(\d*?)\|(\d*?)\|(\d*?)\|(\d*?)\|(\d*?)\|([\s\S]*?)\|(\d*)
+    1|		  2|		 3|				 4|					5|					  6|	  7| 8|	  9||11| 12|  13|		14|15
+01000|San Ángel|Colonia|Álvaro Obregón|Ciudad de México|Ciudad de México|01001|09|01001||09|010|0001|Urbano|01
+82880|Matatán  |Pueblo |Rosario       |Sinaloa         |                |82801|25|82801||28|014|1266|Rural |
+
+$1|$8|$15|$12|$13|$10|$14|$5|$6|$4|$3|$2\n
+
+d_codigo	|c_estado	|c_cve_ciudad	|c_mnpio	|c_tipo_asenta	|id_asenta_cpcons	|c_CP	|d_zona	|d_estado			|d_ciudad			|D_mnpio		|d_tipo_asenta	|d_asenta
+01000	|09		|01			|010		|09			|0001				|	|Urbano	|Ciudad de México	|Ciudad de México 	|Álvaro Obregón	|Colonia		|San Ángel
+
+zip_code|state_code|city_code|municipality_code|settlement_code|zone|state|city|municipality|settlement_type|settlement
